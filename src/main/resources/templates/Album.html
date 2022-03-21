@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+    <link rel="stylesheet" href="./AlbumStyle.css">
+</head>
+<body>
+<div class="con">
+    <section class="nav">
+        <h1>Welcome to <samp>My Site</samp></h1>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="MidCon">
+        <div class="tableAlbum">
+            <table>
+                <tr>
+                    <th>number</th>
+                    <th>title</th>
+                    <th>Song Count</th>
+                    <th>artist</th>
+                    <th>length</th>
+                    <th>Image Url</th>
+                </tr>
+                            <tr th:each="album:${AlbumList}">
+                                <td th:text="${album.number}"></td>
+                                <td th:text="${album.title}"></td>
+                                <td th:text="${album.songCount}"></td>
+                                <td th:text="${album.artist}"></td>
+                                <td th:text="${album.length}"></td>
+                                <td th:text="${album.imageUrl}"><img src="${album.imageUrl}"></td>
+
+
+                            </tr>
+
+            </table>
+        </div>
+
+        <div class="FormAdd">
+            <fieldset>
+                <legend>Add Album</legend>
+                <form action="/addalbum" method="post" >
+                    <label for="number">number</label>
+                    <input id="number" type="number" disabled="true" name="number"><br/>
+                    <label for="title" >title</label>
+                    <input id="title" type="text" required name="title"><br/>
+                    <label for="artist">artist</label>
+                    <input id="artist" type="text" required name="artist"><br/>
+                    <label for="songCount">Song Count</label>
+                    <input id="songCount" type="number" required name="songCount"><br/>
+                    <label for="length">length</label>
+                    <input id="length" type="text" required name="length"><br/>
+                    <label for="imageUrl">Image Url</label>
+                    <input id="imageUrl" type="text" required name="imageUrl"><br/>
+                    <button type="submit">Add Album</button>
+                </form>
+            </fieldset>
+        </div>
+    </section>
+
+
+</div>
+
+</body>
+</html>

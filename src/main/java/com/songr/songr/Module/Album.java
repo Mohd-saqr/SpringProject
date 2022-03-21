@@ -1,12 +1,26 @@
-package com.songr.songr;
+package com.songr.songr.Module;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue
+    private int number;
     private String title;
     private String artist;
     private int songCount;
     private String length;
     private String imageUrl;
 
+    public int getNumber() {
+        return number;
+    }
+
+    public Album() {
+    }
 
     public Album(String title, String artist, int songCount, String length, String imageUrl) {
         this.title = title;

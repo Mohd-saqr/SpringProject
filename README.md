@@ -8,3 +8,7 @@
 
 I use 17 JDK and  i build my app in this way :
 ![](https://user-images.githubusercontent.com/97642724/158468103-7078f18d-e76b-4d7b-8920-756bab2efdbc.png)
+
+# Update for lab 12
+### you can use http://localhost:8080/album to get all album in table and add new album
+### Just change database url in application properties and run the server .
