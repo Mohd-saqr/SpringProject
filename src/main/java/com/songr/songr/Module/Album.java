@@ -2,21 +2,23 @@ package com.songr.songr.Module;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Album {
     @Id
-    @GeneratedValue
-    private int number;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
     private String artist;
     private int songCount;
     private String length;
     private String imageUrl;
 
-    public int getNumber() {
-        return number;
+
+    public int getId() {
+        return id;
     }
 
     public Album() {
@@ -69,6 +71,8 @@ public class Album {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+
 
     @Override
     public String toString() {

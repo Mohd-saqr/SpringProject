@@ -1,24 +1,25 @@
 package com.songr.songr.Controller;
 
 import com.songr.songr.Module.Album;
+import com.songr.songr.Module.Song;
 import com.songr.songr.Repository.AlbumRepo;
+import com.songr.songr.Repository.SongRepo;
 import com.songr.songr.Sevrices.SongrServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.util.List;
-
 @Controller
 public class SongrController {
     private final SongrServices songrServices;
     private final AlbumRepo albumRepo;
-    @Autowired
-    public SongrController(SongrServices songrServices, AlbumRepo albumRepo) {
+    private final SongRepo songRepo;
+
+    public SongrController(SongrServices songrServices, AlbumRepo albumRepo, SongRepo songRepo) {
         this.songrServices = songrServices;
         this.albumRepo = albumRepo;
+        this.songRepo = songRepo;
     }
 
     @GetMapping(path = "/hello")
@@ -50,6 +51,10 @@ public class SongrController {
     public  String getAllAlbum(Model model) {
         model.addAttribute("AlbumList",albumRepo.findAll());
         return "Album";
+    }
+    @PostMapping("/addsong")
+    Song addSong(Song song){
+        return songRepo.save(new Song("mohammed","sdada",10,1));
     }
     }
 

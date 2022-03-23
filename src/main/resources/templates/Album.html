@@ -30,7 +30,7 @@
                     <th>Image Url</th>
                 </tr>
                             <tr th:each="album:${AlbumList}">
-                                <td th:text="${album.number}"></td>
+                                <td th:text="${album.id}"></td>
                                 <td th:text="${album.title}"></td>
                                 <td th:text="${album.songCount}"></td>
                                 <td th:text="${album.artist}"></td>
