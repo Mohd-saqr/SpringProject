@@ -1,22 +1,22 @@
 package com.songr.songr.Module;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
 
 @Entity
 public class Album {
-    @Id
-    @GeneratedValue
-    private int number;
-    private String title;
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title="";
     private String artist;
     private int songCount;
     private String length;
     private String imageUrl;
 
-    public int getNumber() {
-        return number;
+    public Long getId() {
+        return id;
     }
 
     public Album() {
@@ -28,6 +28,10 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -73,7 +77,8 @@ public class Album {
     @Override
     public String toString() {
         return "Album{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", artist='" + artist + '\'' +
                 ", songCount=" + songCount +
                 ", length='" + length + '\'' +
