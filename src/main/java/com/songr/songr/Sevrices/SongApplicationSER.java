@@ -20,4 +20,6 @@ public interface SongApplicationSER {
     Album getAlbum(long id,Model model);
     List<Song>GetAllSongsById(Long id,Model model);
 
+
+
 }
