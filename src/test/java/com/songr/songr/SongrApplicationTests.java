@@ -17,19 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 class SongrApplicationTests {
 
-	private MockMvc mockMvc;
-	@BeforeEach
-	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(webapplicationContext).build();
-	}
-	@Autowired
-	SongrController songrController;
-	@Autowired
-	private WebApplicationContext webapplicationContext;
 
-	@Test
-	void contextLoads() {
-	}
 //	@Test
 //	void testCapitalizeString() throws Exception {
 //		mockMvc.perform(MockMvcRequestBuilders.get("/capitalize/mohammed"))
