@@ -6,7 +6,8 @@ plugins {
 
 group = 'com.songr '
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
+
 
 repositories {
 	mavenCentral()
@@ -24,3 +25,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+task stage(type: Copy, dependsOn: [clean, build]) {
+	from jar.archivePath
+	into project.rootDir
+	rename {
+		'app.jar'
+	}
+}
+
