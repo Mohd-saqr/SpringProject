@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/songr-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/songr-0.0.1-SNAPSHOT.jar
